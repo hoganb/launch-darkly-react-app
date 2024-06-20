@@ -1,0 +1,21 @@
+name: Evaluate LaunchDarkly flags
+
+on:
+  workflow_dispatch:
+
+jobs:
+  eval-flags:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Evaluate flags
+        id: ld
+        uses: launchdarkly/gha-flags@v1.0.1
+        with:
+          sdk-key: ${{ secrets.LAUNCHDARKLY_SDK_KEY }}
+          flags: test1,false
+      - name: If true
+        if: fromJSON(steps.ld.outputs.test1) == true
+        run: echo "It's true"
+      - name: If false
+        if: fromJSON(steps.ld.outputs.test1) == false
+        run: echo "It's false"
