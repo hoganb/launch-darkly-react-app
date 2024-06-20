@@ -2,6 +2,9 @@ name: Find LaunchDarkly feature flags
 
 on: pull_request
 
+permissions:
+  pull-requests: write
+
 jobs:
   find-flags:
     runs-on: ubuntu-latest
