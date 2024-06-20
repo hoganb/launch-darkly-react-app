@@ -1,4 +1,4 @@
-name: Evaluate LaunchDarkly flags
+name: Evaluate LaunchDarkly feature flags
 
 on:
   workflow_dispatch:
