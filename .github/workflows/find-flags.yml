@@ -2,6 +2,9 @@ name: Find LaunchDarkly feature flags
 
 on: pull_request
 
+permissions:
+  pull-requests: write
+
 jobs:
   find-flags:
     runs-on: ubuntu-latest
@@ -17,3 +20,4 @@ jobs:
           environment-key: test
           access-token: ${{ secrets.LAUNCHDARKLY_ACCESS_TOKEN }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          placeholder-comment: true
