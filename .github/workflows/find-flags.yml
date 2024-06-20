@@ -20,3 +20,4 @@ jobs:
           environment-key: test
           access-token: ${{ secrets.LAUNCHDARKLY_ACCESS_TOKEN }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          placeholder-comment: true
